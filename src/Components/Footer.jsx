@@ -26,9 +26,9 @@ const AppFooter = () => {
   const CONTACT_INFO_URL = `${API_BASE_URL}/contact`;
 
   const [contactData, setContactData] = useState({
-    phone: "+971 56 110 7276",
-    email: "info@hoqueshutter.com",
-    address: "Ras al-Khaimah, UAE",
+    phone: "+971 56 478 7683",
+    email: "arifulislamncc@yahoo.com",
+    address: "Dubai, United Arab Emirates, Nakil Center",
     mapUrl: "#",
   });
 

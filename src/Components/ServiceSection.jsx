@@ -1,80 +1,100 @@
-
-
-
 import React from "react";
-import { Settings, Wrench, Zap, LayoutGrid } from "lucide-react";
+import { motion } from "framer-motion";
+import { Settings, Wrench, Zap, LayoutGrid, Sun, Shield } from "lucide-react";
+
+const services = [
+    {
+        icon: <Shield size={36} />,
+        title: "Rolling Shutters & Gates",
+        desc: "Automatic rolling shutters, security gates, and industrial shutter systems engineered for durability and safety across UAE projects."
+    },
+    {
+        icon: <Sun size={36} />,
+        title: "Sunshade & Parda Repairing",
+        desc: "Luxury outdoor sunshade, curtain parda repair, replacement, and motorized shading solutions for villas and commercial spaces."
+    },
+    {
+        icon: <Wrench size={36} />,
+        title: "All Kind of Door Work",
+        desc: "Glass doors, wooden doors, aluminum doors, sliding systems, hinges, locks, and full door restoration services."
+    },
+    {
+        icon: <Zap size={36} />,
+        title: "Electrical & Technical",
+        desc: "Certified wiring, automation systems, diagnostics, and power optimization for residential and industrial properties."
+    },
+    {
+        icon: <LayoutGrid size={36} />,
+        title: "Carpentry & Glass",
+        desc: "Custom furniture, wardrobes, glass partitions, mirrors, and precision carpentry craftsmanship."
+    },
+    {
+        icon: <Settings size={36} />,
+        title: "Maintenance & AMC",
+        desc: "Annual maintenance contracts, shutter servicing, lubrication, alignment, and performance tuning."
+    }
+];
 
 const ServicesSection = () => {
     return (
-        <section className="relative w-full bg-[#0A161E] py-28 overflow-hidden">
+        <section className="relative w-full bg-[#070F15] py-32 overflow-hidden font-[Poppins]">
 
-            {/* Grid Background */}
+            {/* Background */}
             <div className="absolute inset-0">
-                <div className="absolute h-full w-full bg-[linear-gradient(to_right,#1D546C10_1px,transparent_1px),linear-gradient(to_bottom,#1D546C10_1px,transparent_1px)] bg-[size:90px_90px]" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#1D546C] blur-[220px] opacity-5 rounded-full" />
+                <div className="absolute h-full w-full bg-[linear-gradient(to_right,#1D546C12_1px,transparent_1px),linear-gradient(to_bottom,#1D546C12_1px,transparent_1px)] bg-[size:80px_80px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[#1D546C] blur-[250px] opacity-10 rounded-full" />
             </div>
 
             <div className="relative z-10 container mx-auto px-6 lg:px-20">
 
-                {/* Section Header */}
-                <div className="text-center mb-20">
-                    <p className="text-[#1D546C] uppercase tracking-[0.5em] text-xs font-semibold mb-4">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-24"
+                >
+                    <p className="text-[#4AA3C8] uppercase tracking-[0.5em] text-xs font-semibold mb-4">
                         Our Expertise
                     </p>
-                    <h2 className="text-[#F4F4F4] text-4xl md:text-6xl font-extrabold tracking-tight">
+                    <h2 className="text-white text-4xl md:text-6xl font-extrabold tracking-tight">
                         CORE SERVICES
                     </h2>
-                    <p className="text-[#F4F4F4]/60 max-w-2xl mx-auto mt-6">
-                        Precision-driven technical solutions designed for security, comfort, and performance.
+                    <p className="text-white/60 max-w-2xl mx-auto mt-6 leading-relaxed">
+                        Professional shutter, sunshade, door and technical solutions trusted across the UAE.
                     </p>
-                </div>
+                </motion.div>
 
-                {/* Service Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                {/* Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 
-                    {/* Card 1 */}
-                    <div className="group relative border border-[#1D546C]/30 bg-[#1D546C]/5 p-10 hover:border-[#1D546C] transition">
-                        <Settings size={40} className="text-[#1D546C] mb-6" />
-                        <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wide">
-                            Rolling Shutters & Gates
-                        </h3>
-                        <p className="text-[#F4F4F4]/60 text-sm leading-relaxed">
-                            High-grade aluminum, steel, and fireproof automated shutters with remote-controlled precision.
-                        </p>
-                    </div>
+                    {services.map((service, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.15, duration: 0.8 }}
+                            viewport={{ once: true }}
+                            whileHover={{ y: -10 }}
+                            className="group relative border border-[#1D546C]/30 bg-[#1D546C]/5 p-10 transition-all hover:border-[#4AA3C8] hover:shadow-[0_0_40px_rgba(74,163,200,0.15)]"
+                        >
+                            <div className="text-[#4AA3C8] mb-6 group-hover:scale-110 transition-transform">
+                                {service.icon}
+                            </div>
 
-                    {/* Card 2 */}
-                    <div className="group relative border border-[#1D546C]/30 bg-[#1D546C]/5 p-10 hover:border-[#1D546C] transition">
-                        <Wrench size={40} className="text-[#1D546C] mb-6" />
-                        <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wide">
-                            Handyman Services
-                        </h3>
-                        <p className="text-[#F4F4F4]/60 text-sm leading-relaxed">
-                            Professional repair services including door fittings, glass works, and general maintenance.
-                        </p>
-                    </div>
+                            <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wide">
+                                {service.title}
+                            </h3>
 
-                    {/* Card 3 */}
-                    <div className="group relative border border-[#1D546C]/30 bg-[#1D546C]/5 p-10 hover:border-[#1D546C] transition">
-                        <Zap size={40} className="text-[#1D546C] mb-6" />
-                        <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wide">
-                            Electrical & Technical
-                        </h3>
-                        <p className="text-[#F4F4F4]/60 text-sm leading-relaxed">
-                            Certified electrical installation, wiring, diagnostics, and system optimization.
-                        </p>
-                    </div>
+                            <p className="text-white/60 text-sm leading-relaxed">
+                                {service.desc}
+                            </p>
 
-                    {/* Card 4 */}
-                    <div className="group relative border border-[#1D546C]/30 bg-[#1D546C]/5 p-10 hover:border-[#1D546C] transition">
-                        <LayoutGrid size={40} className="text-[#1D546C] mb-6" />
-                        <h3 className="text-white font-bold text-lg mb-4 uppercase tracking-wide">
-                            Carpentry & Glass
-                        </h3>
-                        <p className="text-[#F4F4F4]/60 text-sm leading-relaxed">
-                            Custom carpentry, furniture restoration, and premium glass installations.
-                        </p>
-                    </div>
+                            {/* Glow line */}
+                            <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#4AA3C8] to-transparent group-hover:w-full transition-all duration-700"></div>
+                        </motion.div>
+                    ))}
 
                 </div>
 
