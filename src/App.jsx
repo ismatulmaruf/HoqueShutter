@@ -8,6 +8,8 @@ import Info from "./Pages/Info";
 import FAQ from "./Pages/FAQ";
 import Media from "./Pages/Media";
 import Services from "./Pages/Services";
+import FloatingButtons from "./Components/FloatingButtons.jsx";
+
 
 import NotFound from "./Pages/NotFound";
 // import Signup from "./Pages/Signup";
@@ -108,6 +110,7 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <FloatingButtons />
     </>
   );
 }

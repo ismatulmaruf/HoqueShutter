@@ -135,7 +135,7 @@ function Header() {
               <div className="relative z-10 flex flex-col h-full">
 
                 <div className="p-8 flex justify-between border-b border-white/10">
-                  <span className="font-bold tracking-widest">HOQUE</span>
+                  <span className="font-bold tracking-widest">Hamad</span>
                   <button onClick={() => setOpen(false)} className="hover:rotate-90 transition">
                     <MdClose size={24} />
                   </button>

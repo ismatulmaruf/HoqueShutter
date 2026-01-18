@@ -5,35 +5,51 @@ import { Settings, Wrench, Zap, LayoutGrid, Sun, Shield } from "lucide-react";
 const services = [
     {
         icon: <Shield size={36} />,
-        title: "Rolling Shutters & Gates",
-        desc: "Automatic rolling shutters, security gates, and industrial shutter systems engineered for durability and safety across UAE projects."
+        title: "Rolling Shutters",
+        desc: "Automatic and manual rolling shutters for shops, warehouses and industrial security."
     },
     {
         icon: <Sun size={36} />,
-        title: "Sunshade & Parda Repairing",
-        desc: "Luxury outdoor sunshade, curtain parda repair, replacement, and motorized shading solutions for villas and commercial spaces."
+        title: "Sunshade Parda",
+        desc: "Outdoor sunshade, parda curtain installation, motorized and manual systems."
+    },
+    {
+        icon: <LayoutGrid size={36} />,
+        title: "Mezzanine Floor",
+        desc: "Strong steel mezzanine floors for warehouses, showrooms and storage optimization."
+    },
+    {
+        icon: <Settings size={36} />,
+        title: "Round Stairs",
+        desc: "Custom round and spiral stair fabrication with modern steel and aluminum finishing."
     },
     {
         icon: <Wrench size={36} />,
-        title: "All Kind of Door Work",
-        desc: "Glass doors, wooden doors, aluminum doors, sliding systems, hinges, locks, and full door restoration services."
+        title: "Aluminium Door",
+        desc: "Premium aluminum doors, sliding systems, glass aluminum frames and fittings."
+    },
+    {
+        icon: <Shield size={36} />,
+        title: "Steel Gate",
+        desc: "Heavy duty steel gates for villas, factories and commercial buildings."
     },
     {
         icon: <Zap size={36} />,
-        title: "Electrical & Technical",
-        desc: "Certified wiring, automation systems, diagnostics, and power optimization for residential and industrial properties."
+        title: "Motor Shutter",
+        desc: "Remote controlled motorized shutter installation, repair and automation systems."
     },
     {
         icon: <LayoutGrid size={36} />,
         title: "Carpentry & Glass",
-        desc: "Custom furniture, wardrobes, glass partitions, mirrors, and precision carpentry craftsmanship."
+        desc: "Furniture, partitions, wardrobes, glass fixing and mirror installation services."
     },
     {
-        icon: <Settings size={36} />,
-        title: "Maintenance & AMC",
-        desc: "Annual maintenance contracts, shutter servicing, lubrication, alignment, and performance tuning."
+        icon: <Zap size={36} />,
+        title: "Electrical & Technical",
+        desc: "Complete electrical wiring, automation, troubleshooting and safety systems."
     }
 ];
+
 
 const ServicesSection = () => {
     return (

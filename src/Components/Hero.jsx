@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Settings, Sun } from "lucide-react";
+import { ArrowRight, ShieldCheck, Settings, Sun, DoorOpen } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -30,37 +30,44 @@ const HeroSection = () => {
           >
             <span className="w-2 h-2 bg-[#4AA3C8] animate-ping"></span>
             <span className="text-[10px] tracking-[0.35em] uppercase text-white/80 font-semibold">
-              Hoque Shuttertech • Since 2022
+              Hamad Maintenance • UAE
             </span>
           </motion.div>
 
-          <h1 className="text-[48px] md:text-[72px] lg:text-[90px] font-extrabold leading-[0.9] tracking-tight text-white mb-8">
-            SMART SECURITY <br />
+          <h1 className="text-[48px] md:text-[72px] lg:text-[88px] font-extrabold leading-[0.9] tracking-tight text-white mb-8">
+            ROLLING SHUTTER <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4AA3C8] via-[#1D546C] to-[#4AA3C8] animate-gradientMove">
-              SHADING SOLUTIONS
+              & SUNSHADE EXPERTS
             </span>
           </h1>
 
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
-            Premium <span className="text-white font-semibold">automatic rolling shutters</span> and
-            <span className="text-white font-semibold"> sunshade systems</span> engineered for protection, elegance, and performance.
+            Professional <span className="text-white font-semibold">rolling shutter, motor shutter, sunshade parda, aluminium door, steel gate</span> and complete technical solutions for villas, shops and industrial projects across UAE.
           </p>
 
           {/* FEATURES */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {[ShieldCheck, Sun, Settings].map((Icon, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.08 }}
-                className="flex items-center gap-3 text-white/60 hover:text-[#4AA3C8] transition"
-              >
-                <Icon size={18} />
-                <span className="text-xs uppercase tracking-widest font-semibold">
-                  {["Security Shutters", "Luxury Sunshades", "Expert Maintenance"][i]}
-                </span>
-              </motion.div>
-            ))}
+            {[
+              { text: "Rolling & Motor Shutters", icon: ShieldCheck },
+              { text: "Sunshade & Parda Works", icon: Sun },
+              { text: "All Kind of Door Services", icon: DoorOpen }
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.08 }}
+                  className="flex items-center gap-3 text-white/60 hover:text-[#4AA3C8] transition"
+                >
+                  <Icon size={18} />
+                  <span className="text-xs uppercase tracking-widest font-semibold">
+                    {item.text}
+                  </span>
+                </motion.div>
+              );
+            })}
           </div>
+
 
           {/* BUTTONS */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-6">
@@ -80,7 +87,7 @@ const HeroSection = () => {
               href="/contact"
               className="px-9 py-4 border border-white/20 hover:border-[#4AA3C8] text-white font-bold uppercase text-[12px] tracking-[0.25em]"
             >
-              Get a Quote
+              Contact Now
             </motion.a>
 
           </div>
@@ -94,34 +101,44 @@ const HeroSection = () => {
           className="w-full lg:w-2/5 relative"
         >
 
+          {/* Glow behind */}
+          <div className="absolute inset-0 bg-[#4AA3C8]/20 blur-[120px] rounded-full"></div>
+
+          {/* Image Frame */}
           <motion.div
-            animate={{ y: [0, -12, 0] }}
+            animate={{ y: [0, -15, 0] }}
             transition={{ repeat: Infinity, duration: 6 }}
-            className="relative z-10 p-2 bg-gradient-to-b from-[#4AA3C8] to-transparent"
+            className="relative z-10 p-[2px] bg-gradient-to-br from-[#4AA3C8] via-[#1D546C] to-transparent rounded-xl"
           >
-            <div className="overflow-hidden bg-[#081C2F]">
+            <div className="relative overflow-hidden rounded-xl bg-[#081C2F]">
+
+              {/* Light sweep */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30 animate-shine"></div>
+
               <motion.img
                 whileHover={{ scale: 1.08 }}
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
                 alt="Modern Property"
-                className="w-full h-auto object-cover opacity-90 grayscale-[25%] hover:grayscale-0 transition-all duration-700"
+                className="w-full h-[520px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               />
             </div>
           </motion.div>
 
+          {/* Floating badge */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 1 }}
-            className="absolute -bottom-8 -right-6 bg-white p-6 shadow-2xl z-index-100"
+            className="absolute -bottom-10 -right-6 bg-white px-6 py-4 shadow-2xl rounded-md z-20"
           >
-            <p className="text-[#0C2B4E] font-black text-4xl">100%</p>
+            <p className="text-[#0C2B4E] font-black text-4xl leading-none">100%</p>
             <p className="text-[10px] uppercase tracking-widest font-bold text-[#1D546C] mt-1">
-              Custom Precision
+              Precision Work
             </p>
           </motion.div>
 
         </motion.div>
+
 
       </div>
 
@@ -136,6 +153,16 @@ const HeroSection = () => {
           0% {background-position:0% 50%;}
           100% {background-position:100% 50%;}
         }
+          .animate-shine {
+  background-size: 200% 200%;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
         `}
       </style>
 

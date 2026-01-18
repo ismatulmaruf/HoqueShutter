@@ -85,10 +85,10 @@ const AppFooter = () => {
               />
               <div className="flex flex-col leading-none">
                 <span className="text-xl font-black text-white tracking-tighter uppercase">
-                  Hoque
+                  Hamad
                 </span>
                 <span className="text-[10px] font-bold text-[#1D546C] tracking-[0.4em] uppercase">
-                  ShutterTech
+                  Maintenance Co.
                 </span>
               </div>
             </Link>
