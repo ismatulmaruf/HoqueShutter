@@ -3,121 +3,94 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
-    const cardAnim = {
-        hidden: { opacity: 0, y: 60 },
-        show: (i) => ({
-            opacity: 1,
-            y: 0,
-            transition: { delay: i * 0.2, duration: 0.8, ease: "easeOut" },
-        }),
-    };
+    const cards = [
+        {
+            title: "Call Us",
+            desc: "Direct Support Line",
+            value: "+971 56 478 7683",
+            link: "tel:+971564787683",
+            icon: <FaPhoneAlt size={22} />,
+        },
+        {
+            title: "Email Us",
+            desc: "Business Inquiries",
+            value: "arifulislamncc@yahoo.com",
+            link: "mailto:arifulislamncc@yahoo.com",
+            icon: <FaEnvelope size={22} />,
+        },
+        {
+            title: "Facebook",
+            desc: "Follow Our Work",
+            value: "Visit Page",
+            link: "https://www.facebook.com/profile.php?id=100089096073872",
+            icon: <FaFacebookF size={22} />,
+        },
+    ];
 
     return (
-        <section className="relative w-full py-28 bg-[#0A161E] overflow-hidden">
+        <section className="relative w-full py-32 bg-[#070F15] overflow-hidden">
 
-            {/* Background Effects */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-[-120px] right-[-120px] w-[420px] h-[420px] bg-[#1D546C] rounded-full blur-[200px] opacity-10"></div>
-                <div className="absolute bottom-[-120px] left-[-120px] w-[380px] h-[380px] bg-[#1A3D64] rounded-full blur-[180px] opacity-12"></div>
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1D546C08_1px,transparent_1px),linear-gradient(to_bottom,#1D546C08_1px,transparent_1px)] bg-[size:90px_90px]" />
+            {/* PREMIUM BACKGROUND */}
+            <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,163,200,0.15),transparent_60%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#1D546C10_1px,transparent_1px),linear-gradient(to_bottom,#1D546C10_1px,transparent_1px)] bg-[size:80px_80px]" />
             </div>
 
             <div className="relative z-10 container mx-auto px-6 lg:px-16 text-center">
 
-                {/* Title */}
+                {/* TITLE */}
                 <motion.h2
-                    initial={{ opacity: 0, y: -40 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.7 }}
                     viewport={{ once: true }}
-                    className="text-[42px] md:text-[60px] font-black tracking-tighter text-[#F4F4F4] mb-6"
+                    className="text-4xl md:text-6xl font-bold text-white mb-6"
                 >
-                    Let’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1D546C] to-[#4AA3C8]">Connect</span>
+                    Contact <span className="text-[#4AA3C8]">Us</span>
                 </motion.h2>
 
                 <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
+                    transition={{ delay: 0.3, duration: 0.7 }}
                     viewport={{ once: true }}
-                    className="text-[#F4F4F4]/60 max-w-xl mx-auto text-lg mb-20"
+                    className="text-white/60 max-w-xl mx-auto text-lg mb-20"
                 >
-                    Whether you need security solutions, maintenance, or expert technical support — our team is ready to assist you.
+                    Professional electromechanical solutions with trusted communication support.
                 </motion.p>
 
-                {/* Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                {/* CARDS */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-                    {/* Phone */}
-                    <motion.div
-                        custom={0}
-                        variants={cardAnim}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
-                        className="group border border-[#1D546C]/30 p-12 rounded-xl hover:border-[#1D546C] transition-all duration-500 bg-[#0C2B4E]/40 backdrop-blur-md"
-                    >
-                        <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full border border-[#1D546C]/40 group-hover:bg-[#1D546C] transition-all">
-                            <FaPhoneAlt className="text-[#F4F4F4]" size={22} />
-                        </div>
-                        <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">
-                            Call Us
-                        </h4>
-                        <p className="text-[#F4F4F4]/60 text-sm mb-3">Direct Support Line</p>
-                        <a href="tel:+971564787683" className="text-[#1D546C] font-bold text-lg">
-                            +971 56 478 7683
-                        </a>
-                    </motion.div>
-
-                    {/* Email */}
-                    <motion.div
-                        custom={1}
-                        variants={cardAnim}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
-                        className="group border border-[#1D546C]/30 p-12 rounded-xl hover:border-[#1D546C] transition-all duration-500 bg-[#0C2B4E]/40 backdrop-blur-md"
-                    >
-                        <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full border border-[#1D546C]/40 group-hover:bg-[#1D546C] transition-all">
-                            <FaEnvelope className="text-[#F4F4F4]" size={22} />
-                        </div>
-                        <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">
-                            Email Us
-                        </h4>
-                        <p className="text-[#F4F4F4]/60 text-sm mb-3">Business Inquiries</p>
-                        <a href="mailto:arifulislamncc@yahoo.com" className="text-[#1D546C] font-bold text-lg break-all">
-                            arifulislamncc@yahoo.com
-                        </a>
-                    </motion.div>
-
-                    {/* Facebook */}
-                    <motion.div
-                        custom={2}
-                        variants={cardAnim}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
-                        className="group border border-[#1D546C]/30 p-12 rounded-xl hover:border-[#1D546C] transition-all duration-500 bg-[#0C2B4E]/40 backdrop-blur-md"
-                    >
-                        <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full border border-[#1D546C]/40 group-hover:bg-[#1D546C] transition-all">
-                            <FaFacebookF className="text-[#F4F4F4]" size={22} />
-                        </div>
-                        <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-2">
-                            Facebook
-                        </h4>
-                        <p className="text-[#F4F4F4]/60 text-sm mb-3">Follow Our Work</p>
-                        <a
-                            href="https://www.facebook.com/profile.php?id=100089096073872"
-                            target="_blank"
+                    {cards.map((item, i) => (
+                        <motion.a
+                            key={i}
+                            href={item.link}
+                            target={i === 2 ? "_blank" : "_self"}
                             rel="noreferrer"
-                            className="text-[#1D546C] font-bold text-lg"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.2, duration: 0.7 }}
+                            viewport={{ once: true }}
+                            whileHover={{ y: -8 }}
+                            className="group block p-12 rounded-2xl border border-[#1D546C]/40 bg-[#0C2B4E]/30 backdrop-blur-xl hover:border-[#4AA3C8] transition-all duration-500 shadow-xl"
                         >
-                            Visit Page
-                        </a>
-                    </motion.div>
+                            {/* ICON */}
+                            <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full border border-[#4AA3C8]/40 text-[#4AA3C8] group-hover:bg-[#4AA3C8] group-hover:text-white transition-all duration-500">
+                                {item.icon}
+                            </div>
+
+                            <h4 className="text-white font-semibold tracking-widest uppercase text-sm mb-2">
+                                {item.title}
+                            </h4>
+
+                            <p className="text-white/50 text-sm mb-4">{item.desc}</p>
+
+                            <p className="text-[#4AA3C8] font-bold text-lg break-all">
+                                {item.value}
+                            </p>
+                        </motion.a>
+                    ))}
 
                 </div>
             </div>

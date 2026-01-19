@@ -9,7 +9,7 @@ const navLinks = [
   { title: "Home", path: "/" },
   { title: "Products", path: "/products" },
   { title: "Services", path: "/services" },
-  { title: "Projects", path: "/projects" },
+  { title: "Contact", path: "/contact" },
   { title: "About", path: "/about" },
 ];
 
@@ -29,16 +29,17 @@ function Header() {
         .nav-link-ltr { position: relative; transition: letter-spacing .4s ease; }
         .nav-link-ltr:hover { letter-spacing: .35em; }
 
-        .nav-link-ltr::after {
-          content:'';
-          position:absolute;
-          width:0;
-          height:2px;
-          margin-top:5px;
-          right:0;
-          background:#1D546C;
-          transition:width .4s cubic-bezier(.23,1,.32,1);
-        }
+        // .nav-link-ltr::after {
+        //   content:'';
+        //   position:absolute;
+        //   width:0;
+        //   height:2px;
+        //   margin-top:5px;
+        //   right:0;
+        //   background:#1D546C;
+        //   transition:width .4s cubic-bezier(.23,1,.32,1);
+        //   bottom : 0;
+        // }
         .nav-link-ltr:hover::after {
           width:100%;
           left:0;
@@ -50,12 +51,12 @@ function Header() {
           background:#1D546C!important;
         }
 
-        .nav-active::before{
-          content:'•';
-          position:absolute;
-          left:-12px;
-          color:#1D546C;
-        }
+        // .nav-active::before{
+        //   content:'•';
+        //   position:absolute;
+        //   left:-12px;
+        //   color:#1D546C;
+        // }
       `}</style>
 
       <header

@@ -66,47 +66,7 @@ function App() {
           element={<ResetPassword />}
         /> */}
 
-        <Route element={<RequireAuth allowedRoles={["ADMIN"]} />}>
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route
-            path="/admin/dashboard/slide"
-            element={<AdminDashboardslide />}
-          />
-          <Route
-            path="/admin/dashboard/info"
-            element={<AdminDashboardinfo />}
-          />
-          <Route
-            path="/admin/dashboard/methods"
-            element={<AdminDashboardmethods />}
-          />
-          <Route
-            path="/admin/dashboard/specialist"
-            element={<AdminDashboardspecialist />}
-          />
-          <Route path="/admin/pricing" element={<PricngDashboard />} />
-          <Route path="/admin/contact" element={<ContactDashboard />} />
-          <Route path="/admin/service" element={<ServiceDashboard />} />
-          <Route path="/admin/about" element={<AboutDashboard />} />
-          <Route path="/admin/media" element={<MediaDashboard />} />
-          <Route path="/admin/faq" element={<FaqDashboard />} />
-        </Route>
-
-        <Route
-          element={<RequireAuth allowedRoles={["ADMIN", "INSTRUCTOR"]} />}
-        ></Route>
-
-        {/* <Route
-          element={
-            <RequireAuth allowedRoles={["USER", "ADMIN", "INSTRUCTOR"]} />
-          }
-        >
-          <Route path="/user/profile" element={<Profile />} />
-          <Route
-            path="/user/profile/change-password"
-            element={<ChangePassword />}
-          />
-        </Route> */}
+       
 
         <Route path="*" element={<NotFound />} />
       </Routes>

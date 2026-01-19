@@ -214,7 +214,7 @@ const AppFooter = () => {
         <div className="max-w-[1400px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[11px] font-medium text-white/40 tracking-wider">
             © {new Date().getFullYear()}{" "}
-            <span className="text-white">HOQUE SHUTTERTECH.</span> ALL RIGHTS RESERVED.
+            <span className="text-white">Hamad Maintenance </span> ALL RIGHTS RESERVED.
           </p>
 
           <div className="flex items-center gap-2">
@@ -222,12 +222,12 @@ const AppFooter = () => {
               Designed by
             </span>
             <a
-              href="https://xisly.net"
+              href="https://www.facebook.com/ismatulmaruf/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[11px] font-black text-[#1D546C] hover:text-white transition-all"
             >
-              XISLY.NET
+              Maruf
             </a>
           </div>
         </div>

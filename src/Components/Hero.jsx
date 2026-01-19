@@ -117,7 +117,7 @@ const HeroSection = () => {
 
               <motion.img
                 whileHover={{ scale: 1.08 }}
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+                src="https://i.imgur.com/buC4WVs.jpeg"
                 alt="Modern Property"
                 className="w-full h-[520px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
               />
