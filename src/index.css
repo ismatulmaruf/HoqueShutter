@@ -30,26 +30,28 @@ button:hover {
   box-shadow: 0px 8px 24px #00000011;
 }
 
+
+
 ::-webkit-scrollbar {
   background: #9797e70c;
   width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bae716c4;
+  background: #0C2B4E;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #bae716;
+  background: #0C2B4E;
 }
 
 html.light ::-webkit-scrollbar-thumb {
-  background: #0000ff85;
+  background: #0C2B4E;
 }
 
 html.light ::-webkit-scrollbar-thumb:hover {
-  background: #0000ff;
+  background: #0C2B4E;
 }
 
 /* custom slider button */
