@@ -26,7 +26,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-1 border border-[#4AA3C8]/40 bg-[#4AA3C8]/10"
+            className="inline-flex items-center gap-2 mb-6 mt-6 px-4 py-1 border border-[#4AA3C8]/40 bg-[#4AA3C8]/10"
           >
             <span className="w-2 h-2 bg-[#4AA3C8] animate-ping"></span>
             <span className="text-[10px] tracking-[0.35em] uppercase text-white/80 font-semibold">

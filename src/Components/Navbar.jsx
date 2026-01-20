@@ -7,7 +7,7 @@ import Logo from "./Logo.jsx";
 
 const navLinks = [
   { title: "Home", path: "/" },
-  { title: "Products", path: "/products" },
+  // { title: "Products", path: "/products" },
   { title: "Services", path: "/services" },
   { title: "Contact", path: "/contact" },
   { title: "About", path: "/about" },
@@ -80,10 +80,14 @@ function Header() {
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `nav-link-ltr text-[11px] font-bold uppercase tracking-[0.25em] py-2 transition-all
-                      ${isActive ? "text-[#F4F4F4] nav-active" : "text-[#F4F4F4]/60 hover:text-[#F4F4F4]"}`
+                      `nav-link-ltr text-[11px] uppercase tracking-[0.25em] pt-2 pb-1 transition-all duration-300
+    ${isActive
+                        ? "text-white font-extrabold relative after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-[#4AA3C8] after:to-[#1D546C]"
+                        : "text-[#F4F4F4]/60 font-bold hover:text-[#F4F4F4]"
+                      }`
                     }
                   >
+
                     {item.title}
                   </NavLink>
                 </li>

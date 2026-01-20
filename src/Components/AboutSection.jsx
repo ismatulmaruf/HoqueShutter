@@ -64,7 +64,7 @@ const AboutSection = () => {
                     </h2>
 
                     <p className="text-[#F4F4F4]/70 text-lg leading-relaxed mb-6 max-w-xl font-light">
-                        At <span className="text-white font-medium">HOQUE SHUTTERTECH</span>, we specialize in the intersection of security and comfort. From high-tech automatic rolling shutters that protect your assets to elegant sunshades that transform your outdoor spaces, our work is built to last.
+                        At <span className="text-white font-medium">Hamad Maintenance Co.</span>, we specialize in the intersection of security and comfort. From high-tech automatic rolling shutters that protect your assets to elegant sunshades that transform your outdoor spaces, our work is built to last.
                     </p>
 
                     <p className="text-[#F4F4F4]/60 text-lg leading-relaxed max-w-xl font-light mb-10">

@@ -19,7 +19,7 @@ const AdvantageSection = () => {
             The Advantage
           </p>
           <h2 className="text-[#F4F4F4] text-4xl md:text-6xl font-extrabold tracking-tight">
-            THE HOQUE SHUTTERTECH DIFFERENCE
+            THE Hamad Maintenance Co. DIFFERENCE
           </h2>
           <p className="text-[#F4F4F4]/60 max-w-2xl mx-auto mt-6">
             Where precision engineering meets architectural excellence.

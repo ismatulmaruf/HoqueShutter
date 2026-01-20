@@ -48,19 +48,19 @@ const AppFooter = () => {
   }, [CONTACT_INFO_URL]);
 
   const productsLinks = [
-    { title: "Rolling Shutters", link: "/products" },
-    { title: "Industrial Doors", link: "/products" },
-    { title: "Automatic Sunshades", link: "/products" },
-    { title: "Security Grilles", link: "/products" },
+    { title: "Rolling Shutters", link: "/services" },
+    { title: "Industrial Doors", link: "/services" },
+    { title: "Automatic Sunshades", link: "/services" },
+    { title: "Security Grilles", link: "/services" },
     { title: "Maintenance", link: "/services" },
   ];
 
   const quickLinks = [
     { title: "About Us", link: "/about" },
-    { title: "Our Projects", link: "/projects" },
+    { title: "Our Projects", link: "/Services" },
     { title: "Request Quote", link: "/contact" },
-    { title: "Quality Policy", link: "/info" },
-    { title: "Privacy Policy", link: "/privacy" },
+    { title: "Quality Policy", link: "/about" },
+    { title: "Privacy Policy", link: "/about" },
   ];
 
   return (
@@ -98,15 +98,24 @@ const AppFooter = () => {
             </p>
 
             <div className="flex gap-4">
-              {[FaFacebook, FaInstagram, FaLinkedinIn].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-sm border border-[#1D546C]/30 flex items-center justify-center text-[#F4F4F4] hover:bg-[#1D546C] hover:border-[#1D546C] transition-all duration-300"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/profile.php?id=100089096073872"
+                className="w-10 h-10 rounded-sm border border-[#1D546C]/30 flex items-center justify-center text-[#F4F4F4] hover:bg-[#1D546C] hover:border-[#1D546C] transition-all duration-300"
+              >
+                <FaFacebook size={18} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-sm border border-[#1D546C]/30 flex items-center justify-center text-[#F4F4F4] hover:bg-[#1D546C] hover:border-[#1D546C] transition-all duration-300"
+              >
+                <FaInstagram size={18} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-sm border border-[#1D546C]/30 flex items-center justify-center text-[#F4F4F4] hover:bg-[#1D546C] hover:border-[#1D546C] transition-all duration-300"
+              >
+                <FaLinkedinIn size={18} />
+              </a>
             </div>
           </div>
 
