@@ -1,8 +1,25 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Settings, Sun, DoorOpen } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ShieldCheck, Sun, DoorOpen } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const images = [
+  "https://i.imgur.com/buC4WVs.jpeg",
+  "/Mezzanines.webp",
+  "/Rolling-Shutter.jpg",
+];
 
 const HeroSection = () => {
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen flex items-center bg-[#070F15] overflow-hidden font-[Poppins]">
 
@@ -18,21 +35,16 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5 }}
           className="w-full lg:w-3/5 text-center lg:text-left"
         >
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
-            className="inline-flex items-center gap-2 mb-6 mt-6 px-4 py-1 border border-[#4AA3C8]/40 bg-[#4AA3C8]/10"
-          >
+          <div className="inline-flex items-center gap-2 mb-6 mt-6 px-4 py-1 border border-[#4AA3C8]/40 bg-[#4AA3C8]/10">
             <span className="w-2 h-2 bg-[#4AA3C8] animate-ping"></span>
             <span className="text-[10px] tracking-[0.35em] uppercase text-white/80 font-semibold">
               Hamad Maintenance • UAE
             </span>
-          </motion.div>
+          </div>
 
           <h1 className="text-[48px] md:text-[72px] lg:text-[88px] font-extrabold leading-[0.9] tracking-tight text-white mb-8">
             ROLLING SHUTTER <br />
@@ -68,63 +80,59 @@ const HeroSection = () => {
             })}
           </div>
 
-
           {/* BUTTONS */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-6">
-
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              href="/services"
+            <Link
+              to="/services"
               className="px-9 py-4 bg-gradient-to-r from-[#1D546C] to-[#4AA3C8] text-white font-bold uppercase text-[12px] tracking-[0.25em] flex items-center gap-3 shadow-lg"
             >
               Our Services <ArrowRight size={16} />
-            </motion.a>
+            </Link>
 
-            <motion.a
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              href="/contact"
+            <Link
+              to="/contact"
               className="px-9 py-4 border border-white/20 hover:border-[#4AA3C8] text-white font-bold uppercase text-[12px] tracking-[0.25em]"
             >
               Contact Now
-            </motion.a>
-
+            </Link>
           </div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
+        {/* RIGHT IMAGE SLIDER */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5 }}
           className="w-full lg:w-2/5 relative"
         >
 
-          {/* Glow behind */}
           <div className="absolute inset-0 bg-[#4AA3C8]/20 blur-[120px] rounded-full"></div>
 
-          {/* Image Frame */}
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ repeat: Infinity, duration: 6 }}
             className="relative z-10 p-[2px] bg-gradient-to-br from-[#4AA3C8] via-[#1D546C] to-transparent rounded-xl"
           >
-            <div className="relative overflow-hidden rounded-xl bg-[#081C2F]">
+            <div className="relative overflow-hidden rounded-xl bg-[#081C2F] h-[520px]">
 
-              {/* Light sweep */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30 animate-shine"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-30 animate-shine z-10"></div>
 
-              <motion.img
-                whileHover={{ scale: 1.08 }}
-                src="https://i.imgur.com/buC4WVs.jpeg"
-                alt="Modern Property"
-                className="w-full h-[520px] object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={index}
+                  src={images[index]}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 1.5 }}
+                  className="absolute inset-0 w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                />
+              </AnimatePresence>
+
             </div>
           </motion.div>
 
-          {/* Floating badge */}
+          {/* Badge */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -139,10 +147,9 @@ const HeroSection = () => {
 
         </motion.div>
 
-
       </div>
 
-      {/* GRADIENT ANIMATION */}
+      {/* ANIMATIONS */}
       <style>
         {`
         .animate-gradientMove {
@@ -153,16 +160,14 @@ const HeroSection = () => {
           0% {background-position:0% 50%;}
           100% {background-position:100% 50%;}
         }
-          .animate-shine {
-  background-size: 200% 200%;
-  animation: shine 6s linear infinite;
-}
-
-@keyframes shine {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
-}
-
+        .animate-shine {
+          background-size: 200% 200%;
+          animation: shine 6s linear infinite;
+        }
+        @keyframes shine {
+          0% { background-position: -100% 0; }
+          100% { background-position: 100% 0; }
+        }
         `}
       </style>
 
