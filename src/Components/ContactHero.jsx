@@ -39,7 +39,7 @@ const BusinessIdentitySection = () => {
           viewport={{ once: true }}
           className="text-white text-3xl md:text-5xl font-bold leading-snug"
         >
-          Asaf Hamad Mohamed <br />
+          Hoque Technical <br />
           <span className="text-[#4AA3C8]">
             Electromechanical Installation & Maintenance
           </span>
@@ -56,7 +56,7 @@ const BusinessIdentitySection = () => {
           viewport={{ once: true }}
           className="text-white/80 text-lg"
         >
-          Managing Contact: <span className="text-white font-semibold">Md Arif</span>
+          Managing Contact: <span className="text-white font-semibold">Md Ariful Islam</span>
         </motion.p>
 
         {/* Location */}
@@ -67,7 +67,7 @@ const BusinessIdentitySection = () => {
           viewport={{ once: true }}
           className="text-white/50 text-sm mt-2 tracking-widest uppercase"
         >
-          Sharjah, United Arab Emirates
+          Dubai, United Arab Emirates
         </motion.p>
 
       </div>

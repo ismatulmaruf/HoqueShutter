@@ -10,6 +10,7 @@ const navLinks = [
   // { title: "Products", path: "/products" },
   { title: "Services", path: "/services" },
   { title: "Contact", path: "/contact" },
+  { title: "Projects", path: "/projects" },
   { title: "About", path: "/about" },
 ];
 
@@ -140,7 +141,7 @@ function Header() {
               <div className="relative z-10 flex flex-col h-full">
 
                 <div className="p-8 flex justify-between border-b border-white/10">
-                  <span className="font-bold tracking-widest">Hamad</span>
+                  <span className="font-bold tracking-widest">Hoque</span>
                   <button onClick={() => setOpen(false)} className="hover:rotate-90 transition">
                     <MdClose size={24} />
                   </button>

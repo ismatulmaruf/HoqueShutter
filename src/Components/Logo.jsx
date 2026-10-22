@@ -22,7 +22,7 @@ const Logo = ({ className = "h-10" }) => {
                 fill="#0C2B4E"
                 style={{ font: 'bold 28px Inter, sans-serif', letterSpacing: '-0.05em' }}
             >
-                HAMAD
+                HOQUE
             </text>
             <text
                 x="85"
@@ -30,7 +30,7 @@ const Logo = ({ className = "h-10" }) => {
                 fill="#1D546C"
                 style={{ font: '900 12px Inter, sans-serif', letterSpacing: '0.4em', textTransform: 'uppercase' }}
             >
-                Maintenance
+                Technical
             </text>
         </svg>
     );

@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
             Why Choose Us
           </p>
           <h2 className="text-white text-4xl md:text-6xl font-extrabold tracking-tight">
-            The Hamad Maintenance  Difference
+            The Hoque Technical  Difference
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto mt-6 leading-relaxed">
             Trusted electromechanical and shutter solutions delivering safety,

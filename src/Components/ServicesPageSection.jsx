@@ -14,13 +14,13 @@ const services = [
     icon: <Shield size={28} />,
     title: "Rolling Shutters",
     desc: "Automatic and manual rolling shutters for shops, warehouses and industrial security.",
-    img: "/Rolling-Shutter.jpg"
+    img: "/rollingshutter.webp"
   },
   {
     icon: <Sun size={28} />,
     title: "Sunshade Parda",
     desc: "Outdoor sunshade and parda curtain installation with motorized and manual systems.",
-    img: "sunshade.jpg"
+    img: "sun.jpg"
   },
   {
     icon: <LayoutGrid size={28} />,
@@ -32,7 +32,7 @@ const services = [
     icon: <Settings size={28} />,
     title: "Round Stairs",
     desc: "Custom round and spiral stair fabrication with modern steel finishing.",
-    img: "indoor-spiral-stairs.webp"
+    img: "indoor-spiral-stairs.jpeg"
   },
   {
     icon: <Wrench size={28} />,
@@ -113,9 +113,18 @@ const ServicesSection = () => {
 
               {/* Image */}
               <div className="h-[300px] overflow-hidden">
-                <img
+                {/* <img
                   src={service.img}
                   alt={service.title}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                /> */}
+                <motion.img
+                  src={service.img}
+                  alt={service.title}
+                  initial={{ x: i % 2 === 0 ? -80 : 80, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true }}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
               </div>

@@ -26,7 +26,7 @@ const AppFooter = () => {
   const CONTACT_INFO_URL = `${API_BASE_URL}/contact`;
 
   const [contactData, setContactData] = useState({
-    phone: "+971 56 478 7683",
+    phones: ["+971 56 478 7683", "+971 55 629 3987"],
     email: "arifulislamncc@yahoo.com",
     address: "Dubai, United Arab Emirates, Nakil Center",
     mapUrl: "#",
@@ -38,7 +38,14 @@ const AppFooter = () => {
         const response = await fetch(CONTACT_INFO_URL);
         const result = await response.json();
         if (result.success && result.data?.contactInfo) {
-          setContactData(result.data.contactInfo);
+          const data = result.data.contactInfo;
+
+          setContactData({
+            phones: data.phones || [data.phone], // supports both formats
+            email: data.email,
+            address: data.address,
+            mapUrl: data.mapUrl,
+          });
         }
       } catch (error) {
         console.error("Failed to fetch contact information:", error);
@@ -85,10 +92,10 @@ const AppFooter = () => {
               />
               <div className="flex flex-col leading-none">
                 <span className="text-xl font-black text-white tracking-tighter uppercase">
-                  Hamad
+                  Hoque
                 </span>
                 <span className="text-[10px] font-bold text-[#1D546C] tracking-[0.4em] uppercase">
-                  Maintenance Co.
+                  Technical Co.
                 </span>
               </div>
             </Link>
@@ -173,12 +180,17 @@ const AppFooter = () => {
                   <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest mb-1">
                     Direct Line
                   </p>
-                  <a
-                    href={`tel:${contactData.phone}`}
-                    className="text-sm font-bold text-[#F4F4F4]"
-                  >
-                    {contactData.phone}
-                  </a>
+                  <div className="flex flex-col gap-1">
+                    {contactData.phones.map((num, index) => (
+                      <a
+                        key={index}
+                        href={`tel:${num.replace(/\s/g, "")}`}
+                        className="text-sm font-bold text-[#F4F4F4] hover:text-[#1D546C] transition"
+                      >
+                        {num}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -221,10 +233,7 @@ const AppFooter = () => {
       {/* Bottom Bar */}
       <div className="border-t border-[#1A3D64]">
         <div className="max-w-[1400px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[11px] font-medium text-white/40 tracking-wider">
-            © {new Date().getFullYear()}{" "}
-            <span className="text-white">Hamad Maintenance </span> ALL RIGHTS RESERVED.
-          </p>
+
 
           <div className="flex items-center gap-2">
             <span className="text-[10px] text-white/30 uppercase tracking-[0.2em]">
@@ -239,6 +248,11 @@ const AppFooter = () => {
               Maruf
             </a>
           </div>
+
+          <p className="text-[11px] font-medium text-white/40 tracking-wider">
+            © {new Date().getFullYear()}{" "}
+            <span className="text-white">Hoque Technical </span> ALL RIGHTS RESERVED.
+          </p>
         </div>
       </div>
     </footer>

@@ -22,21 +22,36 @@ const AboutSection = () => {
                     viewport={{ once: true }}
                     className="w-full lg:w-1/2"
                 >
-                    <div className="relative p-3 border border-[#1D546C]/30 rounded-lg overflow-hidden group">
-                        <img
-                            src="/sunshade.jpg"
-                            alt="HOQUE ShutterTech"
-                            className="w-full h-[500px] object-cover rounded-lg grayscale brightness-75 contrast-125 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    <div className="relative p-2 sm:p-3 border border-[#1D546C]/30 rounded-lg overflow-hidden group">
 
-                        <div className="absolute top-6 left-6 text-[10px] font-mono text-[#1D546C] tracking-widest uppercase">
+                        <img
+                            src="/Mezzanines.webp"
+                            alt="HOQUE ShutterTech"
+                            className="
+                w-full 
+                h-[260px] sm:h-[320px] md:h-[420px] lg:h-[500px]
+                object-cover 
+                object-center sm:object-[center_30%]
+                rounded-lg 
+                grayscale brightness-75 contrast-125 
+                group-hover:grayscale-0 group-hover:brightness-100 
+                transition-all duration-700
+            "
+                        />
+
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+                        {/* Top Label */}
+                        <div className="absolute top-3 sm:top-6 left-3 sm:left-6 text-[8px] sm:text-[10px] font-mono text-[#4AA3C8] tracking-widest uppercase">
                             Ref: HS-772 / Tech-Spec
                         </div>
 
-                        <div className="absolute bottom-6 right-6 text-[10px] font-mono text-[#1D546C] tracking-widest uppercase rotate-90 origin-right">
+                        {/* Side Label */}
+                        <div className="hidden sm:block absolute bottom-6 right-4 sm:right-6 text-[9px] sm:text-[10px] font-mono text-[#4AA3C8] tracking-widest uppercase rotate-90 origin-right">
                             System.Secure_Active
                         </div>
+
                     </div>
                 </motion.div>
 
@@ -49,27 +64,55 @@ const AboutSection = () => {
                     className="w-full lg:w-1/2"
                 >
 
-                    <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center gap-3 mb-2">
                         <div className="h-[1px] w-10 bg-[#1D546C]"></div>
                         <span className="text-[10px] tracking-[0.5em] uppercase text-[#1D546C] font-bold">
                             Technical Excellence
                         </span>
                     </div>
 
-                    <h2 className="text-[40px] md:text-[60px] font-black leading-[1.05] text-[#F4F4F4] mb-8 tracking-tighter">
-                        Your Trusted Partner <br />
+                    <h2 className="text-[30px] md:text-[45px] font-black leading-[1.05] text-[#F4F4F4] mb-4 tracking-tighter">
+                        We Produce & Install Rolling
+                        <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1D546C] to-[#4AA3C8]">
-                            in Technical Excellence
+                            Shutters Across UAE
                         </span>
                     </h2>
 
-                    <p className="text-[#F4F4F4]/70 text-lg leading-relaxed mb-6 max-w-xl font-light">
-                        At <span className="text-white font-medium">Hamad Maintenance Co.</span>, we specialize in the intersection of security and comfort. From high-tech automatic rolling shutters that protect your assets to elegant sunshades that transform your outdoor spaces, our work is built to last.
+                    <p className="text-[#F4F4F4]/70 text-md leading-relaxed mb-2 max-w-xl font-light">
+                        Hoque Technical is a leading supplier and installer of automatic rolling shutters and sunshade solutions in Dubai, UAE. With over a decade of experience serving residential, commercial, and industrial clients, we deliver premium quality with fast turnaround.
                     </p>
 
-                    <p className="text-[#F4F4F4]/60 text-lg leading-relaxed max-w-xl font-light mb-10">
-                        With a dedicated team of technicians, we provide end-to-end services including installation, repair, and long-term maintenance. We don't just fix things; we upgrade your property with the latest in shutter technology and technical craftsmanship.
+                    <p className="text-[#F4F4F4]/60 text-lg leading-relaxed max-w-xl font-light mb-2">
+                        We work with the UAE's top construction companies, retail chains, and property developers — delivering shutter systems built to withstand the harsh UAE climate.
                     </p>
+
+                    <ul className="space-y-1 text-[#F4F4F4]/70 text-md md:text-md mb-8">
+                        <li className="flex items-start gap-3">
+                            <span className="text-[#1D546C] font-bold">✓</span>
+                            Free site visit within 1 hour anywhere in Dubai
+                        </li>
+
+                        <li className="flex items-start gap-3">
+                            <span className="text-[#1D546C] font-bold">✓</span>
+                            10-year warranty on all installations
+                        </li>
+
+                        <li className="flex items-start gap-3">
+                            <span className="text-[#1D546C] font-bold">✓</span>
+                            Premium motors: BFT, CAME, FAAC, NICE, BENINCA
+                        </li>
+
+                        <li className="flex items-start gap-3">
+                            <span className="text-[#1D546C] font-bold">✓</span>
+                            Custom sizes & RAL powder coat colours
+                        </li>
+
+                        <li className="flex items-start gap-3">
+                            <span className="text-[#1D546C] font-bold">✓</span>
+                            24/7 emergency repair service across UAE
+                        </li>
+                    </ul>
 
                     {/* CTA */}
                     <div className="flex gap-6 flex-wrap">

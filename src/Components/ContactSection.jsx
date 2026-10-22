@@ -7,8 +7,7 @@ const ContactSection = () => {
         {
             title: "Call Us",
             desc: "Direct Support Line",
-            value: "+971 56 478 7683",
-            link: "tel:+971564787683",
+            values: ["+971 56 478 7683", "+971 55 629 3987"],
             icon: <FaPhoneAlt size={22} />,
         },
         {
@@ -86,9 +85,19 @@ const ContactSection = () => {
 
                             <p className="text-white/50 text-sm mb-4">{item.desc}</p>
 
-                            <p className="text-[#4AA3C8] font-bold text-lg break-all">
-                                {item.value}
-                            </p>
+                            <div className="text-[#4AA3C8] font-bold text-lg space-y-2">
+                                {item.values ? (
+                                    item.values.map((num, idx) => (
+                                        <a key={idx} href={`tel:${num.replace(/\s/g, "")}`} className="block hover:underline">
+                                            {num}
+                                        </a>
+                                    ))
+                                ) : (
+                                    <a href={item.link} className="block hover:underline">
+                                        {item.value}
+                                    </a>
+                                )}
+                            </div>
                         </motion.a>
                     ))}
 
